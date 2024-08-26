@@ -18,7 +18,7 @@ const EditUser = () => {
   const updateUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/users/${id}`, {
+      await axios.patch(`https://mern-crud-sepia-delta.vercel.app/users/${id}`, {
         name,
         email,
         gender,
@@ -43,7 +43,7 @@ const EditUser = () => {
 
   const getUserById = async () => {
     try {
-      const result = await axios.get(`http://localhost:5000/users/${id}`);
+      const result = await axios.get(`https://mern-crud-sepia-delta.vercel.app/users/${id}`);
       setName(result.data.name);
       setEmail(result.data.email);
       setGender(result.data.gender);

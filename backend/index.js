@@ -4,20 +4,25 @@ import cors from "cors";
 import UserRoute from "./routes/UserRoute.js";
 import dotenv from "dotenv";
 
-
 dotenv.config();
 const app = express();
-
 
 const db = mongoose.connection;
 db.on("error", (error) => console.log(error));
 
-app.use(cors());
+app.use(
+  cors(
+    {
+      origin: "https://mern-crud-sepia-delta.vercel.app/",
+      methods: "GET,POST,PUT,DELETE",
+      credentials: true,
+    }
+  ));
 app.use(express.json());
 app.use(UserRoute);
 
 app.listen(5000, () => console.log("server berjalan... "));
 
 mongoose.connect(process.env.DATABASE, {}).then(() => {
-    console.log("database connected");
-  });
+  console.log("database connected");
+});

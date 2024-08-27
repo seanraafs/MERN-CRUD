@@ -13,7 +13,7 @@ const AddUser = () => {
   const saveUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://mern-crud-sepia-delta.vercel.app/users", {
+      await axios.post("https://mern-crud-api-sandy.vercel.app/", {
         name,
         email,
         gender,

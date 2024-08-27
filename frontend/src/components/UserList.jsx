@@ -14,7 +14,7 @@ const UserList = () => {
   }, []);
 
   const getUsers = async () => {
-    const response = await axios.get("https://mern-crud-sepia-delta.vercel.app/users");
+    const response = await axios.get("https://mern-crud-api-sandy.vercel.app/users");
     setUsers(response.data);
   };
 
@@ -30,7 +30,7 @@ const UserList = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`https://mern-crud-sepia-delta.vercel.app/users/${id}`);
+          await axios.delete(`https://mern-crud-api-sandy.vercel.app/users/${id}`);
           getUsers();
           MySwal.fire("Deleted!", "The user has been deleted.", "success");
         } catch (error) {

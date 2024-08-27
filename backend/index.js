@@ -13,13 +13,16 @@ db.on("error", (error) => console.log(error));
 app.use(
   cors(
     {
-      origin: "https://mern-crud-sepia-delta.vercel.app/",
+      origin: "https://mern-crud-api-sandy.vercel.app/",
       methods: "GET,POST,PUT,DELETE",
       credentials: true,
     }
   ));
 app.use(express.json());
 app.use(UserRoute);
+app.get("/", (req, res) => {
+  res.send("hello world");
+})
 
 app.listen(5000, () => console.log("server berjalan... "));
 

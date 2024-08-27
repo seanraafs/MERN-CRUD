@@ -13,7 +13,7 @@ db.on("error", (error) => console.log(error));
 app.use(
   cors(
     {
-      origin: "https://mern-crud-api-sandy.vercel.app/",
+      origin: "https://mern-crud-zeta-ashen.vercel.app",
       methods: "GET,POST,PUT,DELETE",
       credentials: true,
     }

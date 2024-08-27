@@ -9,11 +9,12 @@ const AddUser = () => {
   const [email, setEmail] = useState("");
   const [gender, setGender] = useState("male");
   const navigate = useNavigate();
+  axios.defaults.withCredentials = true;
 
   const saveUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://mern-crud-api-sandy.vercel.app", {
+      await axios.post("https://mern-crud-api-sandy.vercel.app/users", {
         name,
         email,
         gender,

@@ -14,7 +14,7 @@ app.use(
   cors(
     {
       origin: "https://mern-crud-zeta-ashen.vercel.app",
-      methods: "GET,POST,PUT,DELETE",
+      methods: "GET,POST,PUT,PATCH,DELETE",
       credentials: true,
     }
   ));
